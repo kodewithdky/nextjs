@@ -14,20 +14,8 @@ export default function Home() {
 
   return (
     <main>
-      {/* <h1>Image Optimization</h1> */}
-      {/* <Image src={Profile}/>
-      <img src={Profile.src} alt="img" /> */}
+      <h1>dynamic meta data</h1>
 
-      {/* <Image
-        src="https://www.icccricketschedule.com/wp-content/uploads/2023/06/ICC-Cricket-World-Cup-2023.jpg"
-        width={200}
-        height={200}
-        alt="img"
-      /> */}
-
-      <h1 style={{ fontFamily: "Roboto" }}>Font Optimization</h1>
-
-      <h2 className={roboto.className}>Font with next js font feature</h2>
     </main>
   );
 }
