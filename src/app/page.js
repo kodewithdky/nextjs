@@ -1,18 +1,33 @@
 "use client";
-import { useState } from 'react';
-import style from './style.module.css'
+
+import Image from "next/image";
+import Profile from "../../public/vercel.svg";
+import { Roboto } from "next/font/google";
+
+const roboto = Roboto({
+  weight: "100",
+  subsets: ["latin"],
+  display: "swap",
+});
 export default function Home() {
-   const [color,setColor]=useState('red')
-   const {red,green}=style
+  console.log(Profile);
+
   return (
     <main>
-      <h1 className={color=='red'?style.green:style.red}>Conditional style</h1>
-      <h2 style={{backgroundColor:color=='red'?'green':'red'}}>heading 2</h2>
-      <h3 id={style.yellow}>heading 3</h3>
-      <h4 className={red}>heading 4</h4>
-      <h4>heading 4</h4>
-      <h4 className={green}>heading 4</h4>
-      <button onClick={()=>setColor("green")}>Update color</button>
+      {/* <h1>Image Optimization</h1> */}
+      {/* <Image src={Profile}/>
+      <img src={Profile.src} alt="img" /> */}
+
+      {/* <Image
+        src="https://www.icccricketschedule.com/wp-content/uploads/2023/06/ICC-Cricket-World-Cup-2023.jpg"
+        width={200}
+        height={200}
+        alt="img"
+      /> */}
+
+      <h1 style={{ fontFamily: "Roboto" }}>Font Optimization</h1>
+
+      <h2 className={roboto.className}>Font with next js font feature</h2>
     </main>
   );
 }
