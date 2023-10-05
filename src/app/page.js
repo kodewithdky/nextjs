@@ -1,16 +1,18 @@
 "use client";
-import Link from "next/link";
-import styles from "./page.module.css";
-import outside from '../../src/app/style/outside.module.css'
+import { useState } from 'react';
+import style from './style.module.css'
 export default function Home() {
-
-  const Compo = () => {
-    return <h1>This is DK</h1>;
-  };
+   const [color,setColor]=useState('red')
+   const {red,green}=style
   return (
-    <main className={styles.main}>
-      <h1 className="main">Fetch data with api in client Component</h1>
-      <Link href="/productlist" className={outside.main}>Go to Product list</Link>
+    <main>
+      <h1 className={color=='red'?style.green:style.red}>Conditional style</h1>
+      <h2 style={{backgroundColor:color=='red'?'green':'red'}}>heading 2</h2>
+      <h3 id={style.yellow}>heading 3</h3>
+      <h4 className={red}>heading 4</h4>
+      <h4>heading 4</h4>
+      <h4 className={green}>heading 4</h4>
+      <button onClick={()=>setColor("green")}>Update color</button>
     </main>
   );
 }
