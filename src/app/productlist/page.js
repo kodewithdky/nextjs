@@ -1,23 +1,23 @@
-const productList = async () => {
+import Product from "./product";
+const getProduct = async () => {
   let data = await fetch("https://dummyjson.com/products");
   data = await data.json();
   return data.products;
 };
 const Page = async () => {
-  let products = await productList();
+  let products = await getProduct();
   console.log(products);
-
   return (
     <div>
       <h1>Product list</h1>
-      {products.map((item) => (
-        <div>
-          <h3>
-            Name: {item.title} Price:{item.price}
-          </h3>
-          <h5>Description: {item.description}</h5>
-        </div>
-      ))}
+       {
+        products.map((item)=>(
+            <div>
+            <h3>Name: {item.title}</h3>
+             <Product price={item.price}/>
+            </div>
+        ))
+       }
     </div>
   );
 };
